@@ -1,0 +1,14 @@
+date,category,amount,type
+2025-08-01,Salary,120000,credit
+2025-08-02,Groceries,15000,debit
+2025-08-04,Transport,4000,debit
+2025-08-05,SIP - Wealth Builder,10000,debit
+2025-08-07,EMI - Home Loan,18000,debit
+2025-08-10,Utilities,6000,debit
+2025-08-12,Dining,5500,debit
+2025-08-15,Travel,12000,debit
+2025-08-18,Education,7000,debit
+2025-08-22,Shopping,8000,debit
+2025-08-25,Freelance Income,15000,credit
+2025-08-28,Subscriptions,2500,debit
+
