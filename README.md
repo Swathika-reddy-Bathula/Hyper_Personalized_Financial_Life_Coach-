@@ -1,33 +1,79 @@
-# AI-Powered Hyper-Personalized Financial Life Coach
+# AI-Driven Financial Assistant
 
-This repository contains a working Streamlit prototype that brings the presentation’s idea to life. The demo emulates a GenAI-powered financial coach that understands goals, analyses behaviour, recommends banking products, and surfaces explainable insights in real time.
+An AI-driven financial assistant that acts as a personalized financial coach, leveraging Generative AI (GenAI) and Large Language Models (LLMs) to provide:
 
-## Features
-- Multi-goal SIP planner with explainable reasoning by risk profile.
-- Behaviour signals from editable spend buckets or uploaded transaction CSVs.
-- Cash-flow stress test producing predictive alerts (EMI/SIP miss risk, runway).
-- Product intelligence layer with curated mutual funds, credit cards, and safety nets.
-- Downloadable plan snapshot to share with stakeholders.
+- Goal-based investment planning
+- Real-time budgeting insights
+- Personalized product recommendations
+- Predictive financial alerts
+- Explainable AI (XAI) reasoning for every suggestion
 
-## Getting Started
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-streamlit run streamlit_app.py
+## Project Structure
+
+```
+.
+├── backend/          # FastAPI backend
+├── frontend/         # Next.js frontend
+├── demo/            # Streamlit demo interface
+├── database/        # Database migrations and schemas
+└── docs/           # Documentation
 ```
 
-When Streamlit opens in the browser:
-1. Tune the client snapshot (income, cash, EMIs, risk appetite) from the sidebar.
-2. Edit or add financial goals to auto-generate SIP requirements and explanations.
-3. Adjust the spend table or upload a CSV (columns: `date,category,amount,type`) for deeper nudges.
-4. Review predictive alerts, explainable recommendations, and download the plan if needed.
+## Features
 
-## Data Inputs
-- `data/products.json` – curated mutual funds, cards, and savings products with metadata used by the recommendation engine.
-- `data/sample_transactions.csv` – sample behaviour data for quick demos (toggle in sidebar).
+### 1. Goal Understanding & Planning
+Extracts and plans for financial goals from natural language input.
 
-## Notes
-- The prototype is deterministic – no external API keys required – making it safe to demo offline.
-- Extend the logic in `financial_engine.py` to plug in live bank data, GenAI prompt chains, or RAG layers as needed.
+### 2. Behavior Analysis
+Analyzes spending patterns to suggest savings opportunities.
+
+### 3. Personalized Product Matching
+Recommends suitable financial products based on user profile.
+
+### 4. Predictive Alerts
+Warns of risks like missed SIPs or low balances.
+
+### 5. Explainability Layer
+Justifies recommendations to build trust.
+
+## Technical Stack
+
+- **AI Models**: GPT-4, Llama-3, LangChain, LlamaIndex
+- **Frontend**: React/Next.js, Tailwind CSS
+- **Backend**: Python, FastAPI
+- **Cloud**: AWS (EC2, Lambda, S3)
+- **Database**: PostgreSQL
+- **Vector DB**: Pinecone/FAISS
+
+## Setup Instructions
+
+### Backend Setup
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+### Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Demo Setup
+```bash
+cd demo
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+## Environment Variables
+
+Create `.env` files in each directory with appropriate API keys:
+- `OPENAI_API_KEY`
+- `PINECONE_API_KEY`
+- `DATABASE_URL`
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
 
